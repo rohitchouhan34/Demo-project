@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_09_102122) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_10_105955) do
   create_table "bookings", force: :cascade do |t|
     t.date "date"
     t.string "payment_type"
@@ -30,12 +30,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_102122) do
     t.string "driver_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rate"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "last_name"
+    t.string "password"
   end
 
   add_foreign_key "bookings", "cabs"

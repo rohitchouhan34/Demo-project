@@ -1,0 +1,24 @@
+<h1>New Cab</h1>
+
+<%= form_with model: @cab do |form| %>
+  <div>
+    <%= form.label :registration %><br>
+    <%= form.text_field :registration %>
+  </div>
+
+  <div>
+    <%= form.label :category %><br>
+    <%= form.text_area :category %>
+  </div>
+  <div>
+    <%= form.label :driver_name %><br>
+    <%= form.text_area :driver_name %>
+  </div>
+      <div>
+    <%= form.label :rate %><br>
+    <%= form.text_area :rate %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

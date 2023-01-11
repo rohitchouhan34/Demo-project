@@ -1,0 +1,20 @@
+<% flash.each do |notice, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+  <%if @user%>
+  logged in as :<%= @user.first_name%>
+  <%end%>
+
+<h1>Cab list </h1>
+<ul>
+<% @cabs.each do |cab|  %>
+<li>
+<%=cab.registration %>    &nbsp
+<%=cab.category %>     &nbsp 
+<%= link_to "view more", cab %>
+</li>
+<% end  %> 
+</ul>
+<%= link_to "New Cab", new_cab_path %>

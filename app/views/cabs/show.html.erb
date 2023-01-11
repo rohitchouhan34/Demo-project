@@ -1,0 +1,15 @@
+<p><b>Registration</b> : <%= @cab.registration %></p>
+
+<p><b>Category</b> : <%= @cab.category %></p>
+<p><b>Driver name</b> : <%= @cab.driver_name %></p>
+<p><b>Rate(Rs/Km)</b> : <%= @cab.rate %></p>
+
+  <%= link_to "New Sample", new_cab_booking_path(:cab_id =>1) %>
+
+
+<br>
+
+<%= link_to "Remove Cab", cab_path(@cab), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
