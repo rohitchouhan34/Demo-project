@@ -4,7 +4,7 @@
 <p><b>Driver name</b> : <%= @cab.driver_name %></p>
 <p><b>Rate(Rs/Km)</b> : <%= @cab.rate %></p>
 
-  <%= link_to "New Sample", new_cab_booking_path(:cab_id =>1) %>
+  <%= link_to "Book cab", new_cab_booking_path(@cab.id)%>
 
 
 <br>
