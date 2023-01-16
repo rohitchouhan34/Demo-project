@@ -2,9 +2,7 @@ class CabsController < ApplicationController
   
   def index
     @cabs = Cab.all
-    if session[:user_id]
-      @user=User.find_by(id:session[:user_id])
-    end
+    current_user
   end
 
   def show
@@ -26,7 +24,7 @@ class CabsController < ApplicationController
     @cab = Cab.find(params[:id])
     @cab.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to '/cabs', status: :see_other
   end
   private
   def cab_params

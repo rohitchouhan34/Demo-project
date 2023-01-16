@@ -1,20 +1,27 @@
+<p>HOME PAGE [CABS#INDEX]<p> 
+<h1 style="text-align: center;";> Hello and Welcome </h1> 
 <% flash.each do |notice, msg| %>
   <div>
     <%= msg %>
   </div>
 <% end %>
-  <%if @user%>
-  logged in as :<%= @user.first_name%>
-  <%end%>
+
+ <% if current_user %>
+    <%= link_to 'Logout', '/logout', :data => { :confirm => 'Are you sure?' }%>
+<% else %>
+    <%= link_to 'Signup', new_user_path%>   &nbsp &nbsp    
+    <%= link_to 'Login', '/login'%>  
+<% end %>
 
 <h1>Cab list </h1>
 <ul>
 <% @cabs.each do |cab|  %>
 <li>
 <%=cab.registration %>    &nbsp
-<%=cab.category %>     &nbsp 
-<%= link_to "view more", cab %>
+<%=cab.category %>   &nbsp  &nbsp   &nbsp 
+<%= link_to "view more", cab %>  
 </li>
 <% end  %> 
 </ul>
 <%= link_to "New Cab", new_cab_path %>
+
